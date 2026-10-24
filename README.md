@@ -1,67 +1,69 @@
-# Boba Bash Greater Noida: your card, your site
+# Boba Bash Greater Noida: ship your project to your Boba Pass
 
-Every Boba Pass has an ID on the front, like **grn07**. Your card's QR code and NFC chip open **your own page** in this repo:
+Tap your card on a phone, or scan its QR code: it opens **your own page**. Right now that's a placeholder. Replace it with what you built today.
 
-```
-https://bobabash.github.io/sites/7/
-```
+## 1. Find your number
 
-That page starts as a placeholder. Replace it with anything you build: a portfolio, a game, a project demo.
+Your card ID is on the front, like **grn07**. Your number is the digits: **7**.
 
----
+- Your files go in the folder **sites/7/**
+- Your page goes live at **bobabash.github.io/sites/7/**
 
-## Add your site in 6 steps
+## 2. Fork the repo
 
-**1. Find your number.** Take the digits from your card ID: `grn07` → **7**. (Also shown at [cards.boba-bash.xyz/me](https://cards.boba-bash.xyz/me).)
+Open [github.com/bobabash/bobabash.github.io](https://github.com/bobabash/bobabash.github.io) and click **Fork** (top right). No GitHub account? [Make one](https://github.com/signup), it takes a minute.
 
-**2. Fork this repo.** Click **Fork** at the top right of this page.
+## 3. Replace the placeholder
 
-**3. Open your folder.** In your fork, go to `sites/7/` (your number).
+Your folder already has an **index.html**: that's the "waiting for its owner" page. **Replace its contents** with your site. Keep the name **index.html**, it's the page people land on.
 
-**4. Build your page.** Edit `sites/7/index.html`. Add CSS, JS and images in the same folder.
+**Plain HTML / CSS / JS**
 
-**5. Open a pull request** back to this repo, titled:
+- In the browser: open `sites/7/index.html` in your fork, click the ✏️ pencil, paste your page, **Commit changes**.
+- Add more files with **Add file → Upload files** while inside `sites/7/`.
+- Link files relatively: `./style.css`, `./script.js`, `./img/me.png`. Not `/style.css`.
+
+**React, Vite, Svelte, Vue or anything with a build step**
+
+Ship the **built files**, not the source:
+
+1. Make asset paths relative. Vite: add `base: './'` to `vite.config.js`. Create React App: add `"homepage": "."` to `package.json`.
+2. Run the build (`npm run build`).
+3. Put everything inside `dist/` (or `build/`) into `sites/7/`. The `index.html` from the build replaces the placeholder.
+
+Next.js: use `output: 'export'` with `basePath: '/sites/7'`, then ship the `out/` folder.
+
+**Already hosted somewhere else?** (Vercel, Netlify, Replit, your own domain) You don't need a PR. Log in at [cards.boba-bash.xyz/me](https://cards.boba-bash.xyz/me), go to **My card** and pick **Any link I want**.
+
+## 4. Open a pull request
+
+On your fork's page click **Contribute → Open pull request**. Title it:
 
 ```
 Card 7: Your Name
 ```
 
-**6. Wait for a merge.** An organiser reviews it. About a minute after the merge, your card opens your page.
+## 5. Wait for the merge
 
----
+An organiser reviews and merges it. A minute or two later, tapping your card opens your page. Check it at `bobabash.github.io/sites/7/`.
 
-## Rules
+## Rules (a bot checks every PR)
 
-A check runs on every pull request. It fails if you break these:
+- Only change files inside **sites/your-number/**
+- Don't touch **sites/7.html** (the file next to your folder: it's what your card opens first) or anything else in the repo
+- One card folder per pull request
+- Each file under **5 MB**, no symlinks
+- Keep it friendly: everyone who taps your card sees it
 
-- ✅ Only change files inside **`sites/<your number>/`**
-- ✅ One card folder per pull request
-- ✅ Each file under **5 MB**, no symlinks
-- ✅ Use **relative paths**: `./style.css`, `./img/me.png` (not `/style.css`)
-- ✅ Keep it friendly: everyone who taps your card sees it
+If the check fails, open it, read the message, fix your branch and push again: the PR updates by itself.
 
-Don't touch anything else in the repo: the files at the root, `sites/<n>.html`, `sites/template/` and `sites/loader.html` make the cards work.
+## Common problems
 
-## Editing in the browser (no git needed)
+- **Blank page or missing styles:** your paths start with `/`. Make them `./`.
+- **404:** the file must be called `index.html` (lowercase) and sit directly in `sites/7/`, not in a subfolder.
+- **Old version showing:** wait two minutes, then hard-refresh.
 
-1. Open your fork on github.com and go to `sites/7/index.html`.
-2. Click the ✏️ pencil, edit, then **Commit changes**.
-3. To add images, open `sites/7/`, then **Add file → Upload files**.
-4. Back on your fork's main page, click **Contribute → Open pull request**.
-
-## Test before you send
-
-Open `sites/7/index.html` straight in your browser, or from the repo root run:
-
-```bash
-npx serve .
-```
-
-Then visit `http://localhost:3000/sites/7/`.
-
-## Want your card to open something else?
-
-You don't need a PR for that. Log in at [cards.boba-bash.xyz/me](https://cards.boba-bash.xyz/me) → **My card**, and pick your project page or any link. The QR code and the NFC tap both follow it.
+Stuck? Use **Get help** in your dashboard at [cards.boba-bash.xyz/me](https://cards.boba-bash.xyz/me) and an organiser will come over.
 
 ---
 
