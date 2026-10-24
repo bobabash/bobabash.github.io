@@ -1,22 +1,75 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Boba Bash Greater Noida</title>
-  <meta name="robots" content="noindex">
-  <meta name="theme-color" content="#fbf6e8">
-  <link rel="icon" href="/icon.png">
-  <link rel="stylesheet" href="/go.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Haunted Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/jpg" sizes="32x32" href="favicon.jpg">
+
 </head>
 <body>
-  <main>
-    <img src="/boba-bash.webp" alt="Hack Club's Boba Bash" width="300">
-    <h1 id="t">Boba Bash Greater Noida</h1>
-    <p id="s">Hack Club</p>
-    <div class="bar"><i id="bar"></i></div>
-  </main>
-  <div class="foot" id="n"></div>
-  <script src="/go.js"></script>
+
+    <div class="warning">⚠ THIS WEBSITE IS NOT SAFE ⚠</div>
+
+    <main class="hero">
+        <p class="small-text" id="smallText">YOU SHOULDN'T BE HERE</p>
+        <h1>THE HAUNTED<br><span>WEBSITE</span></h1>
+        <p class="description">
+            Something is wrong with this place...
+            <br>
+            I don't think you're alone.
+        </p>
+        <button id="enterBtn">ENTER IF YOU DARE</button>
+        <button id="hintBtn">NEED A HINT?</button>
+        <p class="hint-text" id="hintText"></p>
+        <p class="status">SYSTEM STATUS: <span id="statusText">WATCHING</span></p>
+    </main>
+
+    <div class="creepy-message" id="creepyMessage"><p id="messageText"></p></div>
+
+    <div class="vitals" aria-hidden="true">
+        <span class="heart" id="heart"></span>
+        <span class="bpm" id="bpm">72 BPM</span>
+        <span id="mood">CALM</span>
+    </div>
+    <button id="soundBtn" aria-pressed="false">SOUND: OFF</button>
+
+    <div class="eyes" id="eyes" aria-hidden="true">
+        <div class="eye"><div class="pupil"></div></div>
+        <div class="eye"><div class="pupil"></div></div>
+    </div>
+
+    <section class="secret-room" id="secretRoom">
+        <button class="close-btn" id="closeBtn" aria-label="Close">×</button>
+        <p class="classified">CLASSIFIED FILE #013</p>
+        <h2>YOU FOUND IT.</h2>
+        <p>This page was never supposed to be visible.</p>
+
+        <div class="file-box">
+            <p>LAST VISITOR:</p>
+            <h3 id="visitorName">UNKNOWN</h3>
+            <p>LAST ACTIVE:</p>
+            <h3 id="lastActive">03:17 AM</h3>
+            <p>VISITS TO THIS ROOM:</p>
+            <h3 id="visitCount">1</h3>
+            <p>STATUS:</p>
+            <h3 class="danger">MISSING</h3>
+            <img src="spooky adi.jpeg" class="adi">
+        </div>
+
+        <form class="name-form" id="nameForm">
+            <input id="nameInput" maxlength="20" placeholder="Tell me your name..." autocomplete="off" aria-label="Your name">
+            <button type="submit">SIGN THE FILE</button>
+        </form>
+        <p class="name-note" id="nameNote"></p>
+
+        <p class="final-text" id="finalText">Whatever you do...<br>don't look behind you.</p>
+    </section>
+
+    <div class="cursor-shadow" id="cursorShadow"></div>
+    <script src="script.js"></script>
 </body>
 </html>
