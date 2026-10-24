@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap");
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: #160e1b;
+}
+
+body {
+  position: relative;
+  isolation: isolate;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+/* Dark, haunted atmosphere */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(12, 5, 20, 0.25),
+    rgba(20, 5, 30, 0.08) 40%,
+    rgba(10, 3, 16, 0.72)
+  );
+}
+
+/* Fog drifting across the bottom */
+body::after {
+  content: "";
+  position: fixed;
+  z-index: 0;
+  pointer-events: none;
+  left: -50%;
+  bottom: -15%;
+  width: 200%;
+  height: 55%;
+
+  background:
+    radial-gradient(
+      ellipse at 20% 70%,
+      rgba(173, 125, 201, 0.22),
+      transparent 45%
+    ),
+    radial-gradient(
+      ellipse at 60% 80%,
+      rgba(103, 66, 143, 0.3),
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 85% 55%,
+      rgba(190, 175, 205, 0.15),
+      transparent 40%
+    );
+
+  filter: blur(35px);
+  animation: hauntedFog 18s ease-in-out infinite alternate;
+}
+
+/* Gothic title */
+.henny-penny {
+  font-family: "Henny Penny", system-ui, cursive;
+  letter-spacing: 0.04em;
+  text-shadow:
+    0 0 8px rgba(200, 150, 255, 0.5),
+    0 0 25px rgba(130, 50, 180, 0.45);
+}
+
+.page-header {
+  position: relative;
+  z-index: 2;
+}
+
+/* Keep the illustration centered below the title */
+.haunted-stage {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: calc(100vh - 100px);
+  padding: 0.5rem 1rem 2.5rem;
+  overflow: visible;
+}
+
+/* SVG artwork */
+.stitched-hand {
+  display: block;
+  width: min(100%, 420px);
+  height: auto;
+  overflow: visible;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  filter:
+    drop-shadow(0 15px 22px rgba(0, 0, 0, 0.52))
+    drop-shadow(0 0 13px rgba(133, 75, 143, 0.15));
+}
+
+/* Endless floating and slightly swaying movement */
+.hand-float {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation: handFloat 6s ease-in-out infinite;
+}
+
+/* Click animation: animate only the hand */
+.stitched-hand.is-clicking .hand-float {
+  animation: handClick 280ms ease-out;
+}
+
+/* Shadow subtly changes as the hand floats */
+.hand-shadow {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: shadowBreathe 6s ease-in-out infinite;
+}
+
+/* Stitches and cuff details get a faint eerie glow */
+.rim-stitches {
+  filter: drop-shadow(0 0 2px rgba(202, 157, 200, 0.25));
+}
+
+/* Animations */
+@keyframes handFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-0.8deg);
+  }
+
+  50% {
+    transform: translateY(-9px) rotate(0.8deg);
+  }
+}
+
+@keyframes handClick {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  35% {
+    transform: scale(0.94) rotate(-5deg);
+  }
+
+  70% {
+    transform: scale(1.04) rotate(2deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes shadowBreathe {
+  0%,
+  100% {
+    transform: scaleX(1);
+    opacity: 0.56;
+  }
+
+  50% {
+    transform: scaleX(0.83);
+    opacity: 0.35;
+  }
+}
+
+@keyframes hauntedFog {
+  from {
+    transform: translateX(-8%) translateY(2%);
+  }
+
+  to {
+    transform: translateX(8%) translateY(-8%);
+  }
+}
+
+/* Responsive sizing */
+@media (max-width: 480px) {
+  .henny-penny {
+    font-size: 2.5rem;
+  }
+
+  .haunted-stage {
+    min-height: calc(100vh - 85px);
+    padding-inline: 0.75rem;
+  }
+
+  .stitched-hand {
+    width: min(100%, 360px);
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  body::after,
+  .hand-float,
+  .hand-shadow {
+    animation: none;
+  }
+
+  .stitched-hand.is-clicking .hand-float {
+    animation: none;
+  }
+}
