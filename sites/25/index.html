@@ -1,26 +1,555 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Card 25 · Boba Bash Greater Noida</title>
-  <meta name="theme-color" content="#fbf6e8">
-  <link rel="stylesheet" href="../style.css">
-</head>
-<body>
-  <main>
-    <img src="../boba-bash.webp" alt="Hack Club's Boba Bash" width="240">
-    <h1>Card 25</h1>
-    <p>This page is waiting for its owner to build something.</p>
-    <div class="card">
-      <b>Is this your card?</b>
-      <ol>
-        <li>Fork <a href="https://github.com/bobabash/bobabash.github.io">bobabash/bobabash.github.io</a></li>
-        <li>Edit only the <code>sites/25/</code> folder. Start with <a href="https://github.com/bobabash/bobabash.github.io/blob/main/sites/25/index.html"><code>sites/25/index.html</code></a></li>
-        <li>Open a pull request called <code>Card 25: Your Name</code></li>
-      </ol>
-    </div>
-    <p class="foot">BOBA BASH GREATER NOIDA · HACK CLUB</p>
-  </main>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nevermore Clickr</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body
+    class="min-h-screen bg-[#301934] bg-[url('./image.png')] bg-cover bg-center bg-no-repeat bg-fixed before:opacity-40"
+  >
+    <header class="page-header p-3">
+      <h1 class="text-white henny-penny text-6xl text-center">
+        Nevermore Clickr
+      </h1>
+    </header>
+
+    <main class="haunted-stage">
+      <svg
+        class="stitched-hand"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 420 540"
+        role="img"
+        aria-labelledby="hand-title hand-description"
+      >
+        <title id="hand-title">The Stitched Hand</title>
+        <desc id="hand-description">
+          A pale, damaged hand covered with stitches, with an open wrist cuff.
+          The hand slowly floats and sways in an endless animation.
+        </desc>
+
+        <defs>
+          <radialGradient id="skin-gradient" cx="40%" cy="25%" r="85%">
+            <stop offset="0%" stop-color="#eadbd6" />
+            <stop offset="35%" stop-color="#cbb2b2" />
+            <stop offset="68%" stop-color="#a17d88" />
+            <stop offset="100%" stop-color="#654752" />
+          </radialGradient>
+
+          <linearGradient id="finger-gradient" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#80616e" />
+            <stop offset="28%" stop-color="#d0b8b9" />
+            <stop offset="65%" stop-color="#b89a9f" />
+            <stop offset="100%" stop-color="#674a57" />
+          </linearGradient>
+
+          <linearGradient id="cuff-gradient" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#72525e" />
+            <stop offset="22%" stop-color="#c8adaf" />
+            <stop offset="52%" stop-color="#e2ceca" />
+            <stop offset="78%" stop-color="#b2939a" />
+            <stop offset="100%" stop-color="#674653" />
+          </linearGradient>
+
+          <linearGradient id="nail-gradient" x1="0" y1="0" x2="0.8" y2="1">
+            <stop offset="0%" stop-color="#afa0a3" />
+            <stop offset="55%" stop-color="#55434e" />
+            <stop offset="100%" stop-color="#28222d" />
+          </linearGradient>
+
+          <radialGradient id="cuff-opening" cx="50%" cy="35%" r="80%">
+            <stop offset="0%" stop-color="#665563" />
+            <stop offset="70%" stop-color="#312735" />
+            <stop offset="100%" stop-color="#18131e" />
+          </radialGradient>
+
+          <linearGradient id="scar-highlight" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#51303f" />
+            <stop offset="50%" stop-color="#4d303d" />
+            <stop offset="100%" stop-color="#d5b1b1" />
+          </linearGradient>
+
+          <filter id="soft-shadow" x="-30%" y="-20%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="7" />
+          </filter>
+        </defs>
+
+        <!-- Shadow beneath the floating hand -->
+        <ellipse
+          class="hand-shadow"
+          cx="215"
+          cy="504"
+          rx="112"
+          ry="14"
+          fill="#08050c"
+          opacity="0.56"
+          filter="url(#soft-shadow)"
+        />
+
+        <g class="hand-float">
+          <!-- Main silhouette -->
+          <path
+            d="
+              M170 145
+              C171 174 166 194 151 216
+              C134 241 111 267 91 292
+              C74 314 60 338 57 358
+              C54 376 66 389 81 385
+              C94 382 108 361 120 345
+              C139 320 151 303 162 290
+              C157 319 147 349 135 380
+              C124 408 112 436 111 455
+              C109 475 123 489 137 482
+              C148 477 155 459 163 439
+              L193 364
+              C188 393 177 430 174 458
+              C171 480 179 499 194 502
+              C209 505 218 490 222 471
+              L243 375
+              C238 408 233 438 235 463
+              C237 483 247 493 260 488
+              C273 483 277 465 279 446
+              L285 370
+              C288 391 295 416 306 428
+              C318 441 332 433 334 419
+              C337 400 323 365 318 342
+              C313 319 315 299 326 277
+              C338 254 329 235 315 216
+              C299 196 281 178 281 151
+              Z
+            "
+            fill="url(#skin-gradient)"
+            stroke="#49313f"
+            stroke-width="2.5"
+            stroke-linejoin="round"
+          />
+
+          <!-- Palm shading -->
+          <path
+            d="M169 212 C185 234 198 264 201 302 C203 335 187 362 175 388"
+            fill="none"
+            stroke="#f1d9d4"
+            stroke-width="11"
+            opacity="0.15"
+            stroke-linecap="round"
+          />
+
+          <path
+            d="M297 224 C310 244 322 260 316 282 C308 307 315 324 320 347"
+            fill="none"
+            stroke="#513847"
+            stroke-width="10"
+            opacity="0.25"
+            stroke-linecap="round"
+          />
+
+          <!-- Bruising and discolored skin -->
+          <g fill="#8f526e" opacity="0.2">
+            <ellipse
+              cx="112"
+              cy="377"
+              rx="16"
+              ry="11"
+              transform="rotate(-35 112 377)"
+            />
+            <ellipse
+              cx="160"
+              cy="322"
+              rx="21"
+              ry="13"
+              transform="rotate(-42 160 322)"
+            />
+            <ellipse
+              cx="198"
+              cy="339"
+              rx="19"
+              ry="12"
+              transform="rotate(18 198 339)"
+            />
+            <ellipse
+              cx="255"
+              cy="305"
+              rx="18"
+              ry="13"
+              transform="rotate(-25 255 305)"
+            />
+            <ellipse
+              cx="269"
+              cy="390"
+              rx="12"
+              ry="20"
+              transform="rotate(10 269 390)"
+            />
+            <ellipse
+              cx="147"
+              cy="443"
+              rx="8"
+              ry="18"
+              transform="rotate(20 147 443)"
+            />
+            <ellipse
+              cx="208"
+              cy="460"
+              rx="8"
+              ry="18"
+              transform="rotate(6 208 460)"
+            />
+          </g>
+
+          <!-- Long stitched wounds -->
+          <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M174 226 C170 247 165 271 154 291"
+              stroke="#573341"
+              stroke-width="4"
+              opacity="0.9"
+            />
+            <path
+              d="M174 226 C170 247 165 271 154 291"
+              stroke="#cfb0b0"
+              stroke-width="2"
+              stroke-dasharray="2 8"
+            />
+
+            <path
+              d="M236 231 C224 249 214 267 203 286"
+              stroke="#52313e"
+              stroke-width="4"
+            />
+            <path
+              d="M236 231 C224 249 214 267 203 286"
+              stroke="#d6b6b5"
+              stroke-width="2"
+              stroke-dasharray="2 8"
+            />
+
+            <path
+              d="M272 267 C286 279 291 295 280 313 C272 325 261 331 251 333"
+              stroke="#553240"
+              stroke-width="4"
+            />
+            <path
+              d="M272 267 C286 279 291 295 280 313 C272 325 261 331 251 333"
+              stroke="#d6b5b5"
+              stroke-width="2"
+              stroke-dasharray="2 8"
+            />
+
+            <path
+              d="M190 314 C205 300 226 299 245 311"
+              stroke="#51303d"
+              stroke-width="4"
+            />
+            <path
+              d="M190 314 C205 300 226 299 245 311"
+              stroke="#d8b7b8"
+              stroke-width="2"
+              stroke-dasharray="2 7"
+            />
+
+            <path
+              d="M120 344 C131 351 142 356 151 358"
+              stroke="#573744"
+              stroke-width="3.5"
+            />
+            <path
+              d="M120 344 C131 351 142 356 151 358"
+              stroke="#e0c2c0"
+              stroke-width="1.5"
+              stroke-dasharray="2 6"
+            />
+          </g>
+
+          <!-- Individual stitches across the wounds -->
+          <g
+            stroke="#34222f"
+            stroke-width="3"
+            stroke-linecap="round"
+            fill="none"
+          >
+            <path
+              d="M174 233 l8 5 M172 244 l8 5 M169 255 l8 5 M166 266 l8 5 M162 277 l8 5 M157 287 l7 4"
+            />
+            <path
+              d="M230 240 l9 5 M224 250 l9 5 M218 260 l9 5 M211 271 l8 5 M205 281 l8 4"
+            />
+            <path
+              d="M274 274 l-7 8 M281 284 l-8 8 M284 295 l-8 7 M278 307 l-8 6 M269 318 l-8 5"
+            />
+            <path
+              d="M197 307 l5 9 M210 303 l4 9 M224 304 l3 9 M237 309 l-1 8"
+            />
+            <path d="M125 348 l5 -7 M137 354 l5 -7 M148 358 l5 -6" />
+          </g>
+
+          <!-- Fine palm creases -->
+          <g fill="none" stroke-linecap="round" stroke-width="2.5">
+            <path
+              d="M182 362 C192 350 207 349 220 357"
+              stroke="#654653"
+              opacity="0.65"
+            />
+            <path
+              d="M184 367 C194 356 207 355 219 362"
+              stroke="#ebd0cb"
+              opacity="0.55"
+            />
+            <path
+              d="M234 346 C247 340 258 343 267 352"
+              stroke="#6d4b58"
+              opacity="0.7"
+            />
+            <path
+              d="M231 352 C244 346 254 350 263 357"
+              stroke="#e6c9c6"
+              opacity="0.5"
+            />
+            <path
+              d="M138 395 C149 389 158 392 164 399"
+              stroke="#724c60"
+              opacity="0.8"
+            />
+            <path
+              d="M137 402 C147 396 156 399 162 405"
+              stroke="#e5c5c5"
+              opacity="0.6"
+            />
+            <path
+              d="M183 414 C195 408 205 411 212 420"
+              stroke="#6a4754"
+              opacity="0.7"
+            />
+            <path
+              d="M184 421 C195 416 203 418 210 425"
+              stroke="#edceca"
+              opacity="0.5"
+            />
+            <path
+              d="M246 413 C256 405 267 407 273 416"
+              stroke="#674653"
+              opacity="0.75"
+            />
+          </g>
+
+          <!-- Thumb nail -->
+          <path
+            d="M60 361 C66 356 76 358 81 365 L82 376 C77 382 68 382 63 376 Z"
+            fill="url(#nail-gradient)"
+            stroke="#6d5360"
+            stroke-width="2"
+          />
+          <path
+            d="M65 363 Q72 359 78 365"
+            fill="none"
+            stroke="#c3afb3"
+            stroke-width="2"
+            opacity="0.55"
+          />
+
+          <!-- Index fingernail -->
+          <path
+            d="M117 451 C124 445 135 449 140 456 L136 470 C131 476 121 472 117 466 Z"
+            fill="url(#nail-gradient)"
+            stroke="#715460"
+            stroke-width="2"
+          />
+          <path
+            d="M121 453 Q130 450 136 457"
+            fill="none"
+            stroke="#c6b2b5"
+            stroke-width="2"
+            opacity="0.65"
+          />
+
+          <!-- Middle fingernail -->
+          <path
+            d="M184 469 C191 464 202 467 207 474 L205 487 C200 495 189 493 184 486 Z"
+            fill="url(#nail-gradient)"
+            stroke="#634958"
+            stroke-width="2"
+          />
+          <path
+            d="M187 471 Q197 467 203 475"
+            fill="none"
+            stroke="#c9b4b7"
+            stroke-width="2"
+            opacity="0.65"
+          />
+
+          <!-- Ring fingernail -->
+          <path
+            d="M245 455 C252 450 261 453 266 460 L263 473 C258 481 249 478 245 471 Z"
+            fill="url(#nail-gradient)"
+            stroke="#634958"
+            stroke-width="2"
+          />
+          <path
+            d="M248 457 Q257 453 262 461"
+            fill="none"
+            stroke="#c9b4b7"
+            stroke-width="2"
+            opacity="0.65"
+          />
+
+          <!-- Little fingernail -->
+          <path
+            d="M304 414 C310 408 320 412 324 419 L322 429 C317 435 309 431 306 426 Z"
+            fill="url(#nail-gradient)"
+            stroke="#604555"
+            stroke-width="2"
+          />
+          <path
+            d="M308 415 Q315 412 320 420"
+            fill="none"
+            stroke="#c9b4b7"
+            stroke-width="2"
+            opacity="0.6"
+          />
+
+          <!-- Knuckle creases -->
+          <g
+            fill="none"
+            stroke="#765360"
+            stroke-width="2"
+            stroke-linecap="round"
+            opacity="0.9"
+          >
+            <path d="M119 431 Q130 423 140 430 M117 437 Q129 430 139 436" />
+            <path d="M181 442 Q196 434 207 442 M180 449 Q195 442 206 449" />
+            <path d="M242 432 Q254 424 265 432 M241 439 Q253 432 264 439" />
+            <path d="M300 397 Q311 390 321 398 M301 404 Q311 398 323 405" />
+            <path d="M65 341 Q77 336 86 342 M64 348 Q76 343 85 349" />
+          </g>
+
+          <!-- Wrist cuff -->
+          <path
+            d="
+              M155 81
+              C153 107 160 142 166 163
+              C172 185 193 197 221 197
+              C250 197 273 186 280 163
+              C287 140 292 107 289 81
+              Z
+            "
+            fill="url(#cuff-gradient)"
+            stroke="#654653"
+            stroke-width="2.5"
+            stroke-linejoin="round"
+          />
+
+          <!-- Cuff folds -->
+          <g fill="none" stroke-linecap="round" stroke-width="2.5">
+            <path
+              d="M171 105 C173 125 176 144 182 160"
+              stroke="#785662"
+              opacity="0.7"
+            />
+            <path
+              d="M181 111 C183 132 184 145 192 164"
+              stroke="#f0d9d4"
+              opacity="0.55"
+            />
+            <path
+              d="M202 119 C205 137 208 152 211 174"
+              stroke="#785461"
+              opacity="0.6"
+            />
+            <path
+              d="M227 108 C225 133 230 153 231 174"
+              stroke="#f0d9d4"
+              opacity="0.5"
+            />
+            <path
+              d="M253 104 C248 125 250 147 247 168"
+              stroke="#73505e"
+              opacity="0.75"
+            />
+            <path
+              d="M271 104 C267 125 266 141 258 160"
+              stroke="#f2d9d2"
+              opacity="0.45"
+            />
+            <path
+              d="M174 167 C195 181 247 185 271 166"
+              stroke="#684653"
+              opacity="0.8"
+            />
+          </g>
+
+          <!-- Cuff bottom stitching -->
+          <path
+            d="M167 163 C192 180 251 182 280 163"
+            fill="none"
+            stroke="#3d2936"
+            stroke-width="2.5"
+            stroke-dasharray="4 6"
+            stroke-linecap="round"
+          />
+
+          <!-- Open top of the cuff -->
+          <ellipse
+            cx="222"
+            cy="82"
+            rx="67"
+            ry="24"
+            fill="url(#cuff-gradient)"
+            stroke="#593b49"
+            stroke-width="2.5"
+          />
+
+          <ellipse
+            cx="222"
+            cy="83"
+            rx="56"
+            ry="15"
+            fill="url(#cuff-opening)"
+            stroke="#b99da6"
+            stroke-width="2"
+          />
+
+          <ellipse
+            class="rim-stitches"
+            cx="222"
+            cy="82"
+            rx="62"
+            ry="20"
+            fill="none"
+            stroke="#382633"
+            stroke-width="3"
+            stroke-dasharray="3 7"
+            stroke-linecap="round"
+          />
+
+          <!-- Inner rim highlight -->
+          <path
+            d="M172 79 C191 68 251 68 271 79"
+            fill="none"
+            stroke="#e7d2cf"
+            stroke-width="2"
+            opacity="0.7"
+            stroke-linecap="round"
+          />
+        </g>
+      </svg>
+    </main>
+  </body>
+  <script>
+    const hand = document.querySelector(".stitched-hand");
+
+    hand.addEventListener("click", () => {
+      hand.classList.remove("is-clicking");
+      void hand.getBoundingClientRect();
+      hand.classList.add("is-clicking");
+    });
+
+    hand.addEventListener("animationend", (event) => {
+      if (event.animationName === "hand-click") {
+        hand.classList.remove("is-clicking");
+      }
+    });
+  </script>
 </html>
