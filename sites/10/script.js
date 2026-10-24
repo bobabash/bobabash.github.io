@@ -1,11 +1,11 @@
 const pumpBtn = document.getElementById("pump");
 
 const audio = [
-  "assets/aud1.m4a",
-  "assets/aud2.m4a",
-  "assets/aud3.m4a",
-  "assets/aud4.m4a",
-  "assets/aud5.mp3",
+  "./assets/aud1.m4a",
+  "./assets/aud2.m4a",
+  "./assets/aud3.m4a",
+  "./assets/aud4.m4a",
+  "./assets/aud5.mp3",
 ];
 
 pumpBtn.addEventListener("click", () => {
