@@ -1,0 +1,358 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #090707;
+    color: #eee;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    cursor: crosshair;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle, transparent 30%, rgba(0,0,0,0.8));
+    z-index: 5;
+}
+
+.warning {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #777;
+    z-index: 10;
+    animation: warningFlicker 3s infinite;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.small-text {
+    color: #777;
+    font-size: 11px;
+    letter-spacing: 5px;
+    margin-bottom: 25px;
+    animation: flicker 4s infinite;
+}
+
+h1 {
+    font-size: clamp(50px, 9vw, 120px);
+    line-height: 0.9;
+    letter-spacing: -4px;
+    animation: titleFlicker 5s infinite;
+    text-shadow:
+    0 0 7px #fff,
+    0 0 10px rgba(255, 0, 0, 0.9),
+    0 0 21px rgba(255, 0, 0, 0.8),
+    0 0 42px rgba(255, 0, 0, 0.6),
+    0 0 82px rgba(255, 0, 0, 0.4);
+}
+
+h1 span {
+    color: #8e1515;
+    text-shadow: 0 0 20px rgba(150,0,0,0.4);
+    text-shadow:
+    0 0 7px #fff,
+    0 0 10px rgba(255, 0, 0, 0.9),
+    0 0 21px rgba(255, 0, 0, 0.8),
+    0 0 42px rgba(255, 0, 0, 0.6),
+    0 0 82px rgba(255, 0, 0, 0.4);
+}
+
+.description {
+    margin-top: 30px;
+    color: #888;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+#enterBtn {
+    margin-top: 30px;
+    padding: 14px 25px;
+    background: transparent;
+    color: white;
+    border: 1px solid #555;
+    font-size: 11px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.3s;
+    0 0 10px rgba(255, 0, 0, 0.7),
+    0 0 30px rgba(255, 0, 0, 0.4),
+    0 0 60px rgba(255, 0, 0, 0.2);
+}
+
+.adi {
+    width: 90px;
+    position: absolute;
+    left: 800px;
+    top: 315px;
+}
+
+#enterBtn:hover {
+    background: #8e1515;
+    border-color: #8e1515;
+    
+    transition: 0.3s;
+    0 0 10px rgba(255, 0, 0, 0.7),
+    0 0 30px rgba(255, 0, 0, 0.4),
+    0 0 60px rgba(255, 0, 0, 0.2);
+}
+
+#hintBtn {
+    margin-top: 15px;
+    background: transparent;
+    color: #555;
+    border: none;
+    font-size: 10px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+#hintBtn:hover {
+    color: #999;
+}
+
+.hint-text {
+    margin-top: 10px;
+    color: #666;
+    font-size: 11px;
+    letter-spacing: 1px;
+    min-height: 15px;
+}
+
+.status {
+    margin-top: 22px;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #444;
+}
+
+.status span {
+    color: #8e1515;
+}
+
+.creepy-message {
+    position: fixed;
+    left: 50%;
+    bottom: 12%;
+    transform: translateX(-50%);
+    opacity: 0;
+    z-index: 30;
+    pointer-events: none;
+    transition: 0.4s;
+}
+
+.creepy-message.show {
+    opacity: 1;
+}
+
+.creepy-message p {
+    font-size: clamp(20px, 4vw, 40px);
+    letter-spacing: 4px;
+    color: #a71919;
+    text-shadow: 0 0 15px rgba(160,0,0,0.6);
+}
+
+.secret-room {
+    position: fixed;
+    inset: 0;
+    background: #080505;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 40;
+    transition: 0.5s;
+}
+
+.secret-room.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.classified {
+    color: #8e1515;
+    font-size: 10px;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.secret-room h2 {
+    font-size: clamp(45px, 8vw, 90px);
+}
+
+.secret-room > p {
+    margin-top: 18px;
+    color: #777;
+}
+
+.file-box {
+    margin-top: 25px;
+    padding: 20px 30px;
+    width: min(400px, 90vw);
+    border: 1px solid #252525;
+    background: #0d0b0b;
+    text-align: left;
+}
+
+.file-box p {
+    color: #555;
+    font-size: 9px;
+    letter-spacing: 2px;
+    margin-top: 12px;
+}
+
+.file-box h3 {
+    margin-top: 5px;
+    font-size: 15px;
+}
+
+.file-box .danger {
+    color: #9b1616;
+}
+
+.final-text {
+    color: #9b1616 !important;
+    animation: flicker 2s infinite;
+}
+
+.close-btn {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: white;
+}
+
+.cursor-shadow {
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(120,0,0,0.1), transparent 70%);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+}
+
+.shake {
+    animation: shake 0.25s linear;
+}
+
+@keyframes shake {
+    0% { transform: translate(0); }
+    20% { transform: translate(-4px, 2px); }
+    40% { transform: translate(4px, -2px); }
+    60% { transform: translate(-2px, -4px); }
+    80% { transform: translate(3px, 3px); }
+    100% { transform: translate(0); }
+}
+
+@keyframes flicker {
+    0%, 18%, 22%, 63%, 70%, 100% {
+        opacity: 1;
+    }
+
+    20%, 21%, 64% {
+        opacity: 0.15;
+    }
+}
+
+@keyframes warningFlicker {
+    0%, 19%, 21%, 63%, 65%, 100% {
+        opacity: 0.7;
+    }
+
+    20%, 64% {
+        opacity: 0.15;
+    }
+}
+
+@keyframes titleFlicker {
+    0%, 10%, 12%, 50%, 52%, 100% {
+        opacity: 1;
+    }
+
+    11%, 51% {
+        opacity: 0.7;
+    }
+}
+
+@media (max-width: 600px) {
+
+    h1 {
+        letter-spacing: -2px;
+    }
+
+    .warning {
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+
+    .small-text {
+        letter-spacing: 3px;
+    }
+
+    .description {
+        font-size: 13px;
+    }
+}
+
+body::before { animation: breathe 5s ease-in-out infinite; }
+@keyframes breathe { 0%,100% { opacity: 1; } 50% { opacity: .65; } }
+
+.creepy-message p { font-family: 'Special Elite', 'Courier New', monospace; text-align: center; min-height: 1.2em; }
+.creepy-message.typing p::after { content: "▍"; margin-left: 2px; animation: blink .6s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+.vitals { position: fixed; left: 22px; bottom: 20px; z-index: 10; font-size: 10px; letter-spacing: 2px; color: #555; display: flex; align-items: center; gap: 10px; }
+.heart { width: 10px; height: 10px; background: #8e1515; border-radius: 50%; box-shadow: 0 0 10px #8e1515; }
+.heart.beat { animation: thump .35s ease-out; }
+@keyframes thump { 0% { transform: scale(1); } 30% { transform: scale(1.9); } 100% { transform: scale(1); } }
+.bpm { color: #8e1515; min-width: 70px; }
+
+#soundBtn { position: fixed; right: 22px; bottom: 18px; z-index: 10; background: none; border: 1px solid #333; color: #666; font-size: 10px; letter-spacing: 2px; padding: 7px 12px; cursor: pointer; }
+#soundBtn:hover { color: #bbb; border-color: #777; }
+
+.eyes { position: fixed; z-index: 3; display: flex; gap: 14px; opacity: 0; transition: opacity 1.2s; pointer-events: none; }
+.eyes.show { opacity: .9; }
+.eye { width: 26px; height: 14px; border-radius: 50%; background: #d8d2c4; position: relative; overflow: hidden; box-shadow: 0 0 14px rgba(150,0,0,.5); }
+.pupil { position: absolute; width: 8px; height: 8px; background: #200; border-radius: 50%; left: 9px; top: 3px; }
+
+.name-form { margin-top: 18px; display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+.name-form input { background: #0d0b0b; border: 1px solid #333; color: #eee; padding: 10px 14px; font-size: 13px; width: 200px; }
+.name-form input:focus-visible, button:focus-visible { outline: 1px solid #8e1515; outline-offset: 2px; }
+.name-form button { background: transparent; border: 1px solid #555; color: #ccc; padding: 10px 16px; font-size: 11px; letter-spacing: 2px; cursor: pointer; }
+.name-form button:hover { background: #8e1515; border-color: #8e1515; }
+.name-note { margin-top: 10px; color: #666; font-size: 12px; min-height: 16px; }
+
+@media (max-width: 600px) { .vitals { font-size: 8px; left: 12px; } #soundBtn { right: 12px; } }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
